@@ -9,6 +9,7 @@ function InputsCadastro(props) {
         phone: "",
         password: "",
     });
+
     const [isEmailValid, setIsEmailValid] = useState(true);
     const [passwordValid, setPasswordValid] = useState(true);
 
@@ -21,8 +22,9 @@ function InputsCadastro(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(form.password.length)
         if (validaEmail(form.email)) {
-            if (validaPassword(form.password)) {
+            if (form.password.length >= 8) {
                 console.log('Email válido', form.email)
                 axios
                     .post('http://localhost:8080/users', form)
@@ -44,11 +46,6 @@ function InputsCadastro(props) {
         return regex.test(email);
     };
 
-    const validaPassword = (password) => {
-        if (password.lenght < 8){
-            setPasswordValid(false)
-        }
-    }
     return (
         <form className="inputs-cadastro" onSubmit={handleSubmit}>
             <h1>Cadastre-se</h1>
@@ -92,7 +89,7 @@ function InputsCadastro(props) {
                 />
             </label>
             <br />
-            <label>
+            <label id="password">
                 Password:
                 <input required
                     type="password"
@@ -105,7 +102,7 @@ function InputsCadastro(props) {
                 <div className="error-popup">
                     <div className="error-popup-content">
                         <p>
-                           Senha muito curta! Por favor digite-a novamente!
+                            Senha muito curta! Por favor digite-a novamente!
                         </p>
                         <button onClick={() => setPasswordValid(true)}>Fechar</button>
                     </div>

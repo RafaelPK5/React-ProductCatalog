@@ -2,14 +2,19 @@
 
 /* InputsCadastro.css */
 
+.app{
+    background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+}
+
 .inputs-cadastro {
     display: flex;
+    align-items: center;
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     margin-top: 100px;
-    background-color: #f5f5f5;
+    background-color: #8f8b8b;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -17,10 +22,12 @@
 .inputs-cadastro label {
     margin-bottom: 8px;
     font-weight: bold;
+    font-size: larger;
     color: #333;
 }
 
 .inputs-cadastro input {
+    margin-left: 10px;
     padding: 10px;
     margin-bottom: 16px;
     border: 1px solid #3200e6;
@@ -79,4 +86,8 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
+  }
+
+  #password{
+    margin-right: 22px;
   }

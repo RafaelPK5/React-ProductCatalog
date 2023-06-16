@@ -1,0 +1,17 @@
+.ProCad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .ProCad h1 {
+    color: aqua;
+    order: 1;
+  }
+  
+  .ProCad h2 {
+    color: aqua;
+    order: 2;
+  }
